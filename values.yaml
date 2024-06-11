@@ -4,7 +4,7 @@ image:
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: "v8"
+  tag: ''
 
 imagePullSecrets: []
 nameOverride: ""
@@ -101,7 +101,7 @@ postgresql:
   image:
     registry: docker.io
     repository: postgres
-    tag: latest
+    tag: ''
   service:
     name: postgresql
     port: 5432
