@@ -1,10 +1,10 @@
 replicaCount: 1
 
 image:
-  tag: ''
+  tag: 'v12'
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: ''
+  tag: 'v12'
 
 imagePullSecrets: []
 nameOverride: ""
@@ -99,9 +99,9 @@ secrets:
 
 postgresql:
   image:
-  tag: ''
+  tag: 'v12'
     repository: postgres
-    tag: ''
+    tag: 'v12'
   service:
     name: postgresql
     port: 5432
