@@ -1,108 +1,64 @@
-replicaCount: 1
-
+affinity: {}
+autoscaling:
+  enabled: false
+  maxReplicas: 100
+  minReplicas: 1
+  targetCPUUtilizationPercentage: 80
+fullnameOverride: ''
 image:
+  pullPolicy: IfNotPresent
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
-  pullPolicy: IfNotPresent
-  tag: "v8"
-
+  tag: 10
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
-
-serviceAccount:
-  create: true
-  automount: true
-  annotations: {}
-  name: ""
-
-podAnnotations: {}
-podLabels: {}
-
-podSecurityContext: {}
-  # fsGroup: 2000
-
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
-
-service:
-  type: "NodePort"
-  nodePort: 30012
-  port: 6868
-
 ingress:
-  enabled: false
-  className: ""
   annotations: {}
+  className: ''
+  enabled: false
   hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  - host: chart-example.local
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
   tls: []
-
-resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
 livenessProbe:
   httpGet:
     path: /
     port: 80
-# readinessProbe:
-#   httpGet:
-#     path: /
-#     port: 8080
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
-
-volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
-
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
-
+nameOverride: ''
 nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
-
-secrets:
-  name: api-secrets
-  type: Opaque
-  data:
-    DB_USER: cG9zdGdyZXM=
-    DB_PASS: YnVu
-    DB_NAME: c3R1ZGVudHM=
-    DB_HOST: ZGI=
-    DB_PORT: NTQzMg==
-
+podAnnotations: {}
+podLabels: {}
+podSecurityContext: {}
 postgresql:
   image:
-  tag: 'v12'
+    registry: docker.io
     repository: postgres
-    tag: 'v12'
+  resources: {}
   service:
     name: postgresql
     port: 5432
-  resources: {}
+replicaCount: 1
+resources: {}
+secrets:
+  data:
+    DB_HOST: ZGI=
+    DB_NAME: c3R1ZGVudHM=
+    DB_PASS: YnVu
+    DB_PORT: NTQzMg==
+    DB_USER: cG9zdGdyZXM=
+  name: api-secrets
+  type: Opaque
+securityContext: {}
+service:
+  nodePort: 30012
+  port: 6868
+  type: NodePort
+serviceAccount:
+  annotations: {}
+  automount: true
+  create: true
+  name: ''
+tolerations: []
+volumeMounts: []
+volumes: []
