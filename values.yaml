@@ -75,4 +75,4 @@ affinity:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - k8s-worker2.local
+                - k8s-master.local
