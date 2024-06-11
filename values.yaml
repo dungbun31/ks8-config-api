@@ -86,3 +86,23 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+secrets:
+  name: api-secrets
+  type: Opaque
+  data:
+    DB_USER: cG9zdGdyZXM=
+    DB_PASS: YnVu
+    DB_NAME: c3R1ZGVudHM=
+    DB_HOST: ZGI=
+    DB_PORT: NTQzMg==
+
+postgresql:
+  image:
+    registry: docker.io
+    repository: postgres
+    tag: latest
+  service:
+    name: postgresql
+    port: 5432
+  resources: {}
