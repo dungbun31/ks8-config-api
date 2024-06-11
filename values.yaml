@@ -101,7 +101,7 @@ postgresql:
   image:
     registry: docker.io
     repository: postgres
-    tag: 'latest'
+    tag: "latest"
 
   service:
     name: postgresql
