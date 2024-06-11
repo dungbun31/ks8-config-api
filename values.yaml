@@ -4,7 +4,7 @@ image:
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: "v7"
+  tag: "v8"
 
 imagePullSecrets: []
 nameOverride: ""
