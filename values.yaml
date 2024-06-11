@@ -72,5 +72,13 @@ affinity:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - k8s-worker1
           - k8s-worker2
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+    - labelSelector:
+        matchExpressions:
+        - key: app
+          operator: In
+          values:
+          - helm-web
+      topologyKey: "kubernetes.io/hostname"
