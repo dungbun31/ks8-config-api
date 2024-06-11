@@ -4,7 +4,7 @@ image:
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: "v8"
+  tag: "v15"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -40,10 +40,10 @@ ingress:
   className: ""
   annotations: {}
   hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  - host: chart-example.local
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
   tls: []
 
 resources: {}
@@ -101,7 +101,7 @@ postgresql:
   image:
     registry: docker.io
     repository: postgres
-    
+
   service:
     name: postgresql
     port: 5432
