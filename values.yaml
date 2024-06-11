@@ -1,10 +1,10 @@
 replicaCount: 1
 
 image:
-  tag: 'v12'
+  registry: docker.io
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: 'v12'
+  tag: "v8"
 
 imagePullSecrets: []
 nameOverride: ""
