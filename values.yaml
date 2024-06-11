@@ -9,7 +9,7 @@ image:
   pullPolicy: IfNotPresent
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
-  tag: v14
+  tag: v15
 imagePullSecrets: []
 ingress:
   annotations: {}
