@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  registry: docker.io
+  tag: ''
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
   tag: ''
@@ -99,7 +99,7 @@ secrets:
 
 postgresql:
   image:
-    registry: docker.io
+  tag: ''
     repository: postgres
     tag: ''
   service:
