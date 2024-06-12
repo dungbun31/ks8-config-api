@@ -4,7 +4,7 @@ image:
   registry: docker.io
   repository: dungxbuns/vdt-lab-backend
   pullPolicy: IfNotPresent
-  tag: "v8"
+  tag: "v10"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -31,8 +31,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: "NodePort"
-  nodePort: 30012
+  type: NodePort
+  nodePort: 30068
   port: 6868
 
 ingress:
