@@ -6,10 +6,6 @@ api:
     repository: dungxbuns/vdt-lab-backend
     pullPolicy: IfNotPresent
     tag: "v10"
-  service:
-    type: NodePort
-    nodePort: 30888
-    port: 6868
 
 db:
   image:
@@ -21,7 +17,10 @@ db:
     type: ClusterIP
     port: 5432
 
-
+service:
+    type: NodePort
+    nodePort: 30888
+    port: 6868
 
 imagePullSecrets: []
 nameOverride: ""
