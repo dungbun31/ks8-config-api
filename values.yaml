@@ -32,7 +32,7 @@ securityContext: {}
 
 service:
   type: "NodePort"
-  nodePort: 30081
+  nodePort: 30888
   port: 6868
 
 ingress:
